@@ -15,10 +15,16 @@ public class Demenagement {
 		int emport;
 		System.out.println("nbVoyage \t nbCartons \t emport \t capCamion");
 		while (nbCartons > 0) {
-			// if ..
-			emport =capCamion;
+			if(nbCartons >= capCamion) {
+				emport = capCamion;
+			}
+			else {
+				emport = nbCartons;
+			}
+			
 			nbVoyage++;
-			System.out.println(nbVoyage + "\t nbCartons \t emport \t capCamion");
+			
+			System.out.println(nbVoyage + "\t \t " + nbCartons + "\t \t " + emport + "\t \t " + capCamion);
 			nbCartons = nbCartons - emport;
 		}
 		
