@@ -2,10 +2,10 @@ package demenagementPack;
 
 public class TestDem {
 	public static void main(String[] args) {
-		System.out.println("Bienvenus");
+		System.out.println("Bienvenue");
 		// on crée une "instance"
 		Demenagement dem = new Demenagement("Entreprise bretonne",9);
 		// on appelle la méthode d’instance "auTravail()
-		dem.auTravail();
+		dem.auTravail(34); 
 	}
 }
