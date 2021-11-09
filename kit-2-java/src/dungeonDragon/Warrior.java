@@ -5,7 +5,7 @@ public class Warrior {
 	private String warriorName;
 	private int lifeLvl;
 	private int attackForce;
-	private String weapon;
+	private Weapon weapon;
 	private String shield;
 	
 	public Warrior() {
@@ -13,15 +13,15 @@ public class Warrior {
     }
 
     public Warrior(String name) {
-        this(name, 9, 10, "Rusty sword", "wooden shield");
+        this(name, 9, 10, "Weapon", "wooden shield");
     }
 	
-	public Warrior(String warriorName, int lifeLvl, int attackForce, String weapon, String shield) {
-		this.setWarriorName(warriorName); // this.warriorName = warriorName;
-		this.setLifeLvl(lifeLvl);
-		this.setAttackForce(attackForce);
-		this.setWeapon(weapon);
-		this.setShield(shield);
+	public Warrior(String warriorName0, int lifeLvl0, int attackForce0, String weapon, String shield0) {
+		this.setWarriorName(warriorName0); // this.warriorName = warriorName;
+		this.setLifeLvl(lifeLvl0);
+		this.setAttackForce(attackForce0);
+		this.setWeapon(new Weapon(weapon));
+		this.setShield(shield0);
 	}
 	
 	public String toString() {
@@ -51,12 +51,12 @@ public class Warrior {
 	private void setAttackForce(int attackForce) {
 		this.attackForce = attackForce;
 	}
-
-	private String getWeapon() {
+	
+	private Weapon getWeapon() {
 		return weapon;
 	}
 
-	private void setWeapon(String weapon) {
+	private void setWeapon(Weapon weapon) {
 		this.weapon = weapon;
 	}
 
@@ -67,7 +67,5 @@ public class Warrior {
 	private void setShield(String shield) {
 		this.shield = shield;
 	}
-
-
 
 }

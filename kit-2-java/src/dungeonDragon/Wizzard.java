@@ -8,12 +8,24 @@ public class Wizzard {
 	private String spell;
 	private String filter;
 	
+	public Wizzard() {
+        this("undefined wizzard");
+    }
+
+    public Wizzard(String name) {
+        this(name, 9, 10, "Ice arrow", "Ice thorns");
+    }
+	
 	public Wizzard(String wizzardName, int lifeLvl, int attackForce, String spell, String filter) {
 		this.setWizzardName(wizzardName);
 		this.setLifeLvl(lifeLvl);
 		this.setAttackForce(attackForce);
 		this.setSpell(spell);
 		this.setFilter(filter);
+	}
+	
+	public String toString() {
+		return (wizzardName + "\nHis Life level is : " + lifeLvl + "\nHis attack force is : " + attackForce + "\nHis spell is : " + spell + "\nHis filter is : " + filter);
 	}
 	
 	private String getWizzardName() {
