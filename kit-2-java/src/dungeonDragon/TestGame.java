@@ -79,17 +79,21 @@ public class TestGame {
 		
 		System.out.println("Life level, press Enter to launch 5 dices : ");
 		clavier.nextLine();
-		int launchDice = Dice.dice(5);
-        int lifeLvl = launchDice;
+		int launchDice1 = Dice.dice(5);
+        int lifeLvl = launchDice1;
         
-        System.out.println("Attack force ? ");
-        int attackForce = Integer.parseInt(clavier.nextLine());
+        System.out.println("Attack force, press Enter to launch 1 dice : ");
+        clavier.nextLine();
+		int launchDice2 = Dice.dice(1);
+        int attackForce = launchDice2;
         
         System.out.println("Weapon name ? ");
         String weaponName = clavier.nextLine();
         
-        System.out.println("Weapon attack level ? ");
-        int weaponAttackLvl = Integer.parseInt(clavier.nextLine());
+        System.out.println("Weapon attack level, press Enter to launch 1 dice : ");
+        clavier.nextLine();
+		int launchDice3 = Dice.dice(1);
+        int weaponAttackLvl = launchDice3;
         
         System.out.println("Shield ? ");
         String shield = clavier.nextLine();
@@ -107,17 +111,23 @@ public class TestGame {
 		System.out.print("Choose your wizzard name : ");
 		String wizzardName = clavier.nextLine();
 		
-		System.out.println("Life level ? ");
-        int lifeLvl = Integer.parseInt(clavier.nextLine());
+		System.out.println("Life level, press Enter to launch 5 dices : ");
+		clavier.nextLine();
+		int launchDice1 = Dice.dice(5);
+        int lifeLvl = launchDice1;
         
-        System.out.println("Attack force ? ");
-        int attackForce = Integer.parseInt(clavier.nextLine());
+        System.out.println("Attack force, press Enter to launch 1 dice : ");
+        clavier.nextLine();
+		int launchDice2 = Dice.dice(1);
+        int attackForce = launchDice2;
         
         System.out.println("Spell ? ");
         String spell = clavier.nextLine();
         
-        System.out.println("Spell attack level ? ");
-        int spellAttackLvl = Integer.parseInt(clavier.nextLine());
+        System.out.println("Spell attack level, press Enter to launch 1 dice : ");
+        clavier.nextLine();
+		int launchDice3 = Dice.dice(1);
+        int spellAttackLvl = launchDice3;
         
         System.out.println("Filter ? ");
         String filter = clavier.nextLine();
