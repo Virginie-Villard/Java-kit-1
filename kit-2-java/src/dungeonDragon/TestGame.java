@@ -34,7 +34,7 @@ public class TestGame {
 		boolean isPlaying = true;
 		
 		do {
-			System.out.print("If you want to stop game choose 0, if you want a warrior choose 1, if you want a wizzard choose 2, if you want to see your characters choose 3 : ");
+			System.out.print("If you want to stop game choose 0, if you want a warrior choose 1, if you want a wizzard choose 2, if you want to see your characters choose 3, if you want to start the game choose 4 : ");
 			int userChoice = clavier.nextInt();
 			
 			// Prend en compte le saut de ligne du clavier fait avant l'entrée. Merci Rick !
@@ -64,6 +64,14 @@ public class TestGame {
 					System.out.println("\n \t Wizzards list");
 					System.out.println(wizzardList);
 					break;
+					
+				case 4:
+					if(warriorList.size() == 0 && wizzardList.size() == 0) {
+						System.out.println("You have to create a character to start the game...");
+					}
+					else {
+						System.out.println("You have created your character, now roll the dice to advance by choosing 4:");
+					}
 		
 				default:
 					System.out.println("Invalid choice...");
@@ -72,6 +80,8 @@ public class TestGame {
 		}
 		while(isPlaying);
 	}
+	
+	
 
 	private void warrior(Scanner clavier) {
 		System.out.print("Choose your warrior name : ");
