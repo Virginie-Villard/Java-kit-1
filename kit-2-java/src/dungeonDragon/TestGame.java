@@ -3,13 +3,13 @@ package dungeonDragon;
 import java.util.*;
 
 public class TestGame {
-	
+
 	private Warrior warrior;
 	private Wizzard wizzard;
-	
+
 	private ArrayList<Warrior> warriorList;
 	private ArrayList<Wizzard> wizzardList;
-	
+
 	public TestGame() {
 		warriorList = new ArrayList();
 		wizzardList = new ArrayList();
@@ -26,9 +26,9 @@ public class TestGame {
 
 		// on crée une "instance"
 		//Warrior iulian = new Warrior("Iulian", 10, 10, "Fly swatter", "His sister");
-		// on appelle la méthode d’instance "
+		// on appelle la méthode d'instance "
 		//System.out.println(iulian);
-
+		
 		Scanner clavier = new Scanner(System.in);
 		
 		boolean isPlaying = true;
@@ -36,7 +36,10 @@ public class TestGame {
 		do {
 			System.out.print("If you want to stop game choose 0, if you want a warrior choose 1, if you want a wizzard choose 2, if you want to see your characters choose 3 : ");
 			int userChoice = clavier.nextInt();
-	
+			
+			// Prend en compte le saut de ligne du clavier fait avant l'entrée. Merci Rick !
+			clavier.nextLine();
+			
 			switch (userChoice) {
 				case 0:
 					isPlaying = false;
@@ -72,44 +75,54 @@ public class TestGame {
 
 	private void warrior(Scanner clavier) {
 		System.out.print("Choose your warrior name : ");
-		String warriorName = clavier.next();
+		String warriorName = clavier.nextLine();
 		
-		System.out.println("Life level ? ");
-        int lifeLvl = clavier.nextInt();
+		System.out.println("Life level, press Enter to launch 5 dices : ");
+		clavier.nextLine();
+		int launchDice = Dice.dice(5);
+        int lifeLvl = launchDice;
         
         System.out.println("Attack force ? ");
-        int attackForce = clavier.nextInt();
+        int attackForce = Integer.parseInt(clavier.nextLine());
         
-        System.out.println("Weapon ? ");
-        String weapon = clavier.next();
+        System.out.println("Weapon name ? ");
+        String weaponName = clavier.nextLine();
+        
+        System.out.println("Weapon attack level ? ");
+        int weaponAttackLvl = Integer.parseInt(clavier.nextLine());
         
         System.out.println("Shield ? ");
-        String shield = clavier.next();
+        String shield = clavier.nextLine();
         
-        warrior = new Warrior(warriorName, lifeLvl, attackForce, weapon, shield);
+        warrior = new Warrior(warriorName, lifeLvl, attackForce, weaponName, weaponAttackLvl, shield);
         
         this.warriorList.add(warrior);
         
         System.out.println(warrior);
 	}
 	
+	
+	
 	private void wizzard(Scanner clavier) {
 		System.out.print("Choose your wizzard name : ");
-		String wizzardName = clavier.next();
+		String wizzardName = clavier.nextLine();
 		
 		System.out.println("Life level ? ");
-        int lifeLvl = clavier.nextInt();
+        int lifeLvl = Integer.parseInt(clavier.nextLine());
         
         System.out.println("Attack force ? ");
-        int attackForce = clavier.nextInt();
+        int attackForce = Integer.parseInt(clavier.nextLine());
         
         System.out.println("Spell ? ");
-        String spell = clavier.next();
+        String spell = clavier.nextLine();
+        
+        System.out.println("Spell attack level ? ");
+        int spellAttackLvl = Integer.parseInt(clavier.nextLine());
         
         System.out.println("Filter ? ");
-        String filter = clavier.next();
+        String filter = clavier.nextLine();
         
-        wizzard = new Wizzard(wizzardName, lifeLvl, attackForce, spell, filter);
+        wizzard = new Wizzard(wizzardName, lifeLvl, attackForce, spell, spellAttackLvl, filter);
         
         this.wizzardList.add(wizzard);
         

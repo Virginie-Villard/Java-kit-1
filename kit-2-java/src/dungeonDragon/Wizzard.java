@@ -5,7 +5,7 @@ public class Wizzard {
 	private String wizzardName;
 	private int lifeLvl;
 	private int attackForce;
-	private String spell;
+	private Spell spell;
 	private String filter;
 	
 	public Wizzard() {
@@ -20,12 +20,20 @@ public class Wizzard {
 		this.setWizzardName(wizzardName);
 		this.setLifeLvl(lifeLvl);
 		this.setAttackForce(attackForce);
-		this.setSpell(spell);
+		this.setSpell(new Spell(spell));
+		this.setFilter(filter);
+	}
+	
+	public Wizzard(String wizzardName, int lifeLvl, int attackForce, String spellName, int spellAttackLvL, String filter) {
+		this.setWizzardName(wizzardName);
+		this.setLifeLvl(lifeLvl);
+		this.setAttackForce(attackForce);
+		this.setSpell(new Spell(spellName, spellAttackLvL));
 		this.setFilter(filter);
 	}
 	
 	public String toString() {
-		return (wizzardName + "\nHis Life level is : " + lifeLvl + "\nHis attack force is : " + attackForce + "\nHis spell is : " + spell + "\nHis filter is : " + filter);
+		return (wizzardName + "\nHis Life level is : " + lifeLvl + "\nHis attack force is : " + attackForce + "\nSpell : " + spell + "\nHis filter is : " + filter);
 	}
 	
 	private String getWizzardName() {
@@ -52,11 +60,11 @@ public class Wizzard {
 		this.attackForce = attackForce;
 	}
 
-	private String getSpell() {
+	private Spell getSpell() {
 		return spell;
 	}
 
-	private void setSpell(String spell) {
+	private void setSpell(Spell spell) {
 		this.spell = spell;
 	}
 

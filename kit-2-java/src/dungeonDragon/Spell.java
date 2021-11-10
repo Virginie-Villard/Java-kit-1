@@ -3,11 +3,23 @@ package dungeonDragon;
 public class Spell {
 	
 	private String spellName;
-	private int attackLvl;
+	private int spellAttackLvl;
+
+	public Spell() {
+		this("Undefined spell");
+	}
+
+	public Spell(String name) {
+		this(name, 2);
+	}
 	
-	public Spell(String spellName, int attackLvl) {
-		this.spellName = spellName;
-		this.attackLvl = attackLvl;
+	public Spell(String spellName, int spellAttackLvl) {
+		this.setSpellName(spellName);
+		this.setSpellAttackLvl(spellAttackLvl);
+	}
+	
+	public String toString() {
+		return ("\nHis spell name is : " + spellName + "\nHis spell attack level is : " + spellAttackLvl);
 	}
 
 	private String getSpellName() {
@@ -18,11 +30,11 @@ public class Spell {
 		this.spellName = spellName;
 	}
 
-	private int getAttackLvl() {
-		return attackLvl;
+	private int getSpellAttackLvl() {
+		return spellAttackLvl;
 	}
 
-	private void setAttackLvl(int attackLvl) {
-		this.attackLvl = attackLvl;
+	private void setSpellAttackLvl(int spellAttackLvl) {
+		this.spellAttackLvl = spellAttackLvl;
 	}
 }

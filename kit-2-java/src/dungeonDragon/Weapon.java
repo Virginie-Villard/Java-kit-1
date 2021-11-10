@@ -3,7 +3,7 @@ package dungeonDragon;
 public class Weapon {
 
 	private String weaponName;
-	private int attackLvl;
+	private int weaponAttackLvl;
 	
 	public Weapon() {
 		this("Undefined weapon");
@@ -13,9 +13,13 @@ public class Weapon {
 		this(name, 2);
 	}
 	
-	public Weapon(String weaponName, int attackLvl) {
+	public Weapon(String weaponName, int weaponAttackLvl) {
 		this.setWeaponName(weaponName);
-		this.setAttackLvl(attackLvl);
+		this.setWeaponAttackLvl(weaponAttackLvl);
+	}
+	
+	public String toString() {
+		return ("\nHis weapon name is : " + weaponName + "\nHis weapon attack level is : " + weaponAttackLvl);
 	}
 
 	private String getWeaponName() {
@@ -26,11 +30,11 @@ public class Weapon {
 		this.weaponName = weaponName;
 	}
 
-	private int getAttackLvl() {
-		return attackLvl;
+	private int getWeaponAttackLvl() {
+		return weaponAttackLvl;
 	}
 
-	private void setAttackLvl(int attackLvl) {
-		this.attackLvl = attackLvl;
+	private void setWeaponAttackLvl(int weaponAttackLvl) {
+		this.weaponAttackLvl = weaponAttackLvl;
 	}
 }

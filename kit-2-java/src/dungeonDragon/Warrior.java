@@ -9,23 +9,31 @@ public class Warrior {
 	private String shield;
 	
 	public Warrior() {
-        this("undefined warrior");
+        this("Undefined warrior");
     }
 
     public Warrior(String name) {
-        this(name, 9, 10, "Weapon", "wooden shield");
+        this(name, 9, 10, "Weapon", 2, "wooden shield");
     }
 	
-	public Warrior(String warriorName0, int lifeLvl0, int attackForce0, String weapon, String shield0) {
+	public Warrior(String warriorName0, int lifeLvl0, int attackForce0, Weapon weapon, String shield0) {
 		this.setWarriorName(warriorName0); // this.warriorName = warriorName;
 		this.setLifeLvl(lifeLvl0);
 		this.setAttackForce(attackForce0);
-		this.setWeapon(new Weapon(weapon));
+		this.setWeapon(weapon);
+		this.setShield(shield0);
+	}
+	
+	public Warrior(String warriorName0, int lifeLvl0, int attackForce0, String weaponName, int weaponAttackLvl, String shield0) {
+		this.setWarriorName(warriorName0); // this.warriorName = warriorName;
+		this.setLifeLvl(lifeLvl0);
+		this.setAttackForce(attackForce0);
+		this.setWeapon(new Weapon(weaponName, weaponAttackLvl));
 		this.setShield(shield0);
 	}
 	
 	public String toString() {
-		return (warriorName + "\nHis Life level is : " + lifeLvl + "\nHis attack force is : " + attackForce + "\nHis weapon is : " + weapon + "\nHis shield is : " + shield);
+		return (warriorName + "\nHis Life level is : " + lifeLvl + "\nHis attack force is : " + attackForce + "\nWeapon : " + weapon + "\nHis shield is : " + shield);
 	}
 
 	private String getWarriorName() {
