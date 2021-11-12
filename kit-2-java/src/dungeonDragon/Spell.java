@@ -18,7 +18,7 @@ public class Spell {
 		this.setSpellAttackLvl(spellAttackLvl);
 	}
 	
-	/** Utilisation de la méthode toString() pour mettre en forme l'objet spell dans la console
+	/** Utilisation de la méthode toString() pour mettre en forme l'objet spell  dans la console
 	 * après que l'utilisateur ait choisi les champs string et tiré au sort les champs int.
 	 */
 	public String toString() {
