@@ -32,6 +32,9 @@ public class Wizzard {
 		this.setFilter(filter);
 	}
 	
+	/** Utilisation de la méthode toString() pour mettre en forme l'objet Wizzard dans la console
+	 * après que l'utilisateur ait choisi les champs string et tiré au sort les champs int.
+	 */
 	public String toString() {
 		return (wizzardName + "\nHis Life level is : " + lifeLvl + "\nHis attack force is : " + attackForce + "\nSpell : " + spell + "\nHis filter is : " + filter);
 	}
