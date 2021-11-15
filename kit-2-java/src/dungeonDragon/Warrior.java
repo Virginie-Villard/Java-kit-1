@@ -80,6 +80,7 @@ public class Warrior {
 	}
 
 	private void setShield(String shield) {
+		// TODO class shield
 		this.shield = shield;
 		if(shield.isEmpty() || shield == null) {
 			this.shield = "Wooden shield";
