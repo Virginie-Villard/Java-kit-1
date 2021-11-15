@@ -33,7 +33,13 @@ public class Spell {
 	}
 
 	private void setSpellName(String spellName) {
-		this.spellName = spellName;
+		if(spellName.isEmpty() || spellName == null) {
+			this.spellName = "Mental dumping";
+		}
+		else {
+			this.spellName = spellName;
+		}
+		System.out.println("Set spell name: "+this.spellName);
 	}
 
 	private int getSpellAttackLvl() {

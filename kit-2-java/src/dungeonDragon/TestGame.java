@@ -42,7 +42,7 @@ public class TestGame {
 		boolean isPlaying = true;
 		
 		do {
-			System.out.print("If you want to stop game choose 0, if you want a warrior choose 1, if you want a wizzard choose 2, if you want to see your characters choose 3, if you want to start the game choose 4 : ");
+			System.out.print("If you want to stop game choose 0, if you want a warrior choose 1, if you want a wizzard choose 2, \nif you want to see your characters choose 3, if you want to start the game choose 4 : ");
 			int userChoice = clavier.nextInt();
 			
 			/** Prend en compte le saut de ligne du clavier fait avant l'entrée. Merci Rick ! */
@@ -84,11 +84,11 @@ public class TestGame {
 					System.out.println(wizzardList);
 					break;
 					
-				/* case 4:
-					PlayGame.playGame(); */
+				case 4:
+					charactersReady();
 		
 				default:
-					System.out.println("Invalid choice...");
+					System.out.println("Invalid choice, try again...");
 					break;
 			}
 		}
@@ -167,5 +167,40 @@ public class TestGame {
         
         System.out.println(wizzard);
 	}
+	
+	/** ___Functions__charactersReady__playGame_____________________________________________________ */
+
+	public void charactersReady() {
+		if(warriorList.size() == 0 && wizzardList.size() == 0) {
+			System.out.println("You have to create a character to start the game...");
+		}
+		else {
+			System.out.println("You have created your character, now roll the dice to advance :");
+			System.out.println("Press enter to roll the dice : ");
+			// new playGame();
+		}
+	} 
+	
+	// public void playGame(Scanner clavier) {
+		// When charactersReady is ok,
+		// positionne perso sur la case 1 et lance le dé
+		// 1 + total du dé
+		// Ajout total du dé autant de fois que nécéssaire
+		// tant qu'on n'est pas >= 64.
+		
+		/** Positionne perso sur la case 1 */
+		/*private int position = 1;
+		
+		while (position <= 64) {
+			/** Lance le dé */
+			/*System.out.println("Press Enter to launch 1 dice to move : ");
+	        clavier.nextLine();
+			int launchDice2 = Dice.dice(1);
+	        int attackForce = launchDice2;
+	        
+			position = position + Dice.total(1);
+			System.out.println("Your character is in position : " + position);
+		} 
+	} */
 
 }

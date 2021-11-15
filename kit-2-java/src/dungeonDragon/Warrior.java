@@ -81,6 +81,13 @@ public class Warrior {
 
 	private void setShield(String shield) {
 		this.shield = shield;
+		if(shield.isEmpty() || shield == null) {
+			this.shield = "Wooden shield";
+		}
+		else {
+			this.shield = shield;
+		}
+		System.out.println("Set shield name: "+this.shield);
 	}
 
 }

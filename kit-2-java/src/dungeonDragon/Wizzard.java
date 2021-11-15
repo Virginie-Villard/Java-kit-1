@@ -76,6 +76,13 @@ public class Wizzard {
 	}
 
 	private void setFilter(String filter) {
-		this.filter = filter;
+		// TODO class filter
+		if(filter.isEmpty() || filter == null) {
+			this.filter = "Pure energy shield";
+		}
+		else {
+			this.filter = filter;
+		}
+		System.out.println("Set filter name: "+this.filter);
 	}
 }
