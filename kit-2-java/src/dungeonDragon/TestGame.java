@@ -1,19 +1,19 @@
-/** Déclaration du Package, nécéssaire. */
+// Déclaration du Package, nécéssaire.
 package dungeonDragon;
 
-/** On rend disponible toutes les classes du package java.util (Scanner etc) */
+// On rend disponible toutes les classes du package java.util (Scanner etc)
 import java.util.*;
 
 public class TestGame {
 
-	/** Déclaration des attributs de la classe TestGame (équivalente au menu). */
+	// Déclaration des attributs de la classe TestGame (équivalente au menu). */
 	private Warrior warrior;
 	private Wizzard wizzard;
 
 	private ArrayList<Warrior> warriorList;
 	private ArrayList<Wizzard> wizzardList;
 
-	/** Déclaration des constructeurs. 
+	/* Déclaration des constructeurs. 
 	 * Le premier, sans paramètre,
 	 * le deuxième avec le nom comme paramètre, sera utilisé par le premier.
 	 * le troisième et le quatrième ont tous les paramètres 
@@ -34,21 +34,21 @@ public class TestGame {
 		System.out.println("Dungeons and Dragons");
 		
 		
-		/** Instance du Scanner, pour récupérer les entrées clavier de l'utilisateur
+		/* Instance du Scanner, pour récupérer les entrées clavier de l'utilisateur
 		(Nom des personnages, des armes, des sorts et boucliers). */
 		Scanner clavier = new Scanner(System.in);
 		
-		/** Déclaration d'un booléen isPlaying pour pouvoir arrêter le jeu. */
+		/* Déclaration d'un booléen isPlaying pour pouvoir arrêter le jeu. */
 		boolean isPlaying = true;
 		
 		do {
 			System.out.print("If you want to stop game choose 0, if you want a warrior choose 1, if you want a wizzard choose 2, \nif you want to see your characters choose 3, if you want to start the game choose 4 : ");
 			int userChoice = clavier.nextInt();
 			
-			/** Prend en compte le saut de ligne du clavier fait avant l'entrée. Merci Rick ! */
+			/* Prend en compte le saut de ligne du clavier fait avant l'entrée. Merci Rick ! */
 			clavier.nextLine();
 			
-			/** Switch pour le choix d'utilisateur
+			/* Switch pour le choix d'utilisateur
 			 * 0 - Quitter le jeu.
 			 * 1 - Créer un Guerrier
 			 * 2 - Créer un sorcier
@@ -95,7 +95,7 @@ public class TestGame {
 		while(isPlaying);
 	}
 	
-	/** ___WARRIOR__lancers de dé__________________________________________________________________
+	/* ___WARRIOR__lancers de dé__________________________________________________________________
 	 * Pour les niveaux (int), on utilise les lancers de dé (classe Dice);
 	 * pour les strings on utilise les entrées clavier, choix utilisateur.
 	 * C'est possible de faire aussi les entiers en choix utilisateurs (précédents commits) 
@@ -134,7 +134,7 @@ public class TestGame {
         System.out.println(warrior);
 	}
 	
-	/** ___WIZZARD__lancers de dé____________________________________________________________________ */
+	/* ___WIZZARD__lancers de dé____________________________________________________________________ */
 
 	private void wizzard(Scanner clavier) {
 		System.out.print("Choose your wizzard name : ");
@@ -168,7 +168,7 @@ public class TestGame {
         System.out.println(wizzard);
 	}
 	
-	/** ___Functions__charactersReady__playGame_____________________________________________________ */
+	/* ___Functions__charactersReady__playGame_____________________________________________________ */
 
 	public void charactersReady() {
 		if(warriorList.size() == 0 && wizzardList.size() == 0) {

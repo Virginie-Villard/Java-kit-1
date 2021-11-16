@@ -18,14 +18,14 @@ public class Shield {
 		this.setShieldDefenseLvl(shieldDefenseLvl);
 	}
 	
-	/** Utilisation de la méthode toString() pour mettre en forme l'objet Shield dans la console
+	/* Utilisation de la méthode toString() pour mettre en forme l'objet Shield dans la console
 	 * après que l'utilisateur ait choisi les champs string et tiré au sort les champs int.
 	 */
 	public String toString() {
 		return ("\nHis shield name is : " + this.shieldName + "\nHis shield defense level is : " + this.shieldDefenseLvl);
 	}
 	
-	/** GETTEURS et SETTEURS ___________________________________________________________________________
+	/* GETTEURS et SETTEURS ___________________________________________________________________________
 	 * Pour pouvoir utiliser les attributs privates de la classe.
 	 */
 	

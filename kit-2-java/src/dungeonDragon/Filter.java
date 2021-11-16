@@ -18,7 +18,7 @@ public class Filter {
 		this.setFilterDefenseLvl(filterDefenseLvl);
 	}
 	
-	/** Utilisation de la méthode toString() pour mettre en forme l'objet Filter dans la console
+	/* Utilisation de la méthode toString() pour mettre en forme l'objet Filter dans la console
 	 * après que l'utilisateur ait choisi les champs string et tiré au sort les champs int.
 	 */
 	public String toString() {
@@ -26,7 +26,7 @@ public class Filter {
 	}
 	
 
-	/** GETTEURS et SETTEURS ___________________________________________________________________________
+	/* GETTEURS et SETTEURS ___________________________________________________________________________
 	 * Pour pouvoir utiliser les attributs privates de la classe.
 	 */
 

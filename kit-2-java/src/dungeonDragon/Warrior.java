@@ -12,7 +12,7 @@ public class Warrior {
         this("Undefined warrior");
     }
 	
-	/** Les 3 constructeurs : */
+	// Les 3 constructeurs :
     public Warrior(String name) {
         this(name, 9, 10, "Weapon", 2, "wooden shield");
     }
@@ -33,16 +33,16 @@ public class Warrior {
 		this.setShield(shield0);
 	}
 	
-	/** Utilisation de la méthode toString() pour mettre en forme l'objet Warrior dans la console
+	/* Utilisation de la méthode toString() pour mettre en forme l'objet Warrior dans la console
 	 * après que l'utilisateur ait choisi les champs string et tiré au sort les champs int.
 	 */
 	public String toString() {
 		return (warriorName + "\nHis Life level is : " + lifeLvl + "\nHis attack force is : " + attackForce + "\nWeapon : " + weapon + "\nHis shield is : " + shield);
 	}
 	
-	/** GETTEURS et SETTEURS ___________________________________________________________________________
-	 * Pour pouvoir utiliser les attributs privates de la classe.
-	 */
+	// GETTEURS et SETTEURS ___________________________________________________________________________
+	// Pour pouvoir utiliser les attributs privates de la classe.
+
 	private String getWarriorName() {
 		return warriorName;
 	}
@@ -81,6 +81,7 @@ public class Warrior {
 
 	private void setShield(String shield) {
 		// TODO class shield
+		// Gestion des entrées utilisateur invalides et comportement par défaut
 		this.shield = shield;
 		if(shield.isEmpty() || shield == null) {
 			this.shield = "Wooden shield";
