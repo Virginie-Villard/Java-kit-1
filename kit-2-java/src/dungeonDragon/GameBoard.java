@@ -2,7 +2,7 @@ package dungeonDragon;
 
 import java.util.*;
 
-public class gameBoard {
+public class GameBoard {
 	// game board ! 
 	
 	

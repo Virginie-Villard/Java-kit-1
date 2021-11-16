@@ -1,4 +1,6 @@
-package dungeonDragon;
+package dungeonDragon.character;
+
+import dungeonDragon.attack.Spell;
 
 public class Wizzard {
 

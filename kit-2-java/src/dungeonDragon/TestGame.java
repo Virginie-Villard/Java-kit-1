@@ -4,6 +4,9 @@ package dungeonDragon;
 // On rend disponible toutes les classes du package java.util (Scanner etc)
 import java.util.*;
 
+import dungeonDragon.character.Warrior;
+import dungeonDragon.character.Wizzard;
+
 public class TestGame {
 
 	// Déclaration des attributs de la classe TestGame (équivalente au menu). */

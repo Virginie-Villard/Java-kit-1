@@ -1,26 +1,26 @@
-package dungeonDragon;
+package dungeonDragon.character;
+
+import dungeonDragon.attack.Weapon;
+import dungeonDragon.protection.Shield;
 
 public class Warrior {
 
-	private String warriorName;
-	private int lifeLvl;
-	private int attackForce;
 	private Weapon weapon;
 	private Shield shield;
 	
+	// Les 3 constructeurs :
 	public Warrior() {
         this("Undefined warrior");
     }
 	
-	// Les 3 constructeurs :
     public Warrior(String name) {
         this(name, 9, 10, "Weapon", 2, "wooden shield", 2);
     }
 	
-	public Warrior(String warriorName0, int lifeLvl0, int attackForce0, Weapon weapon, Shield shield) {
-		this.setWarriorName(warriorName0); // this.warriorName = warriorName;
-		this.setLifeLvl(lifeLvl0);
-		this.setAttackForce(attackForce0);
+	public Warrior(String warriorName, int lifeLvl, int attackForce, Weapon weapon, Shield shield) {
+		this.setWarriorName(warriorName); // this.warriorName = warriorName;
+		this.setLifeLvl(lifeLvl);
+		this.setAttackForce(attackForce);
 		this.setWeapon(weapon);
 		this.setShield(shield);
 	}
