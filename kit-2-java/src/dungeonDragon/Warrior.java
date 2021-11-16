@@ -6,7 +6,7 @@ public class Warrior {
 	private int lifeLvl;
 	private int attackForce;
 	private Weapon weapon;
-	private String shield;
+	private Shield shield;
 	
 	public Warrior() {
         this("Undefined warrior");
@@ -14,30 +14,30 @@ public class Warrior {
 	
 	// Les 3 constructeurs :
     public Warrior(String name) {
-        this(name, 9, 10, "Weapon", 2, "wooden shield");
+        this(name, 9, 10, "Weapon", 2, "wooden shield", 2);
     }
 	
-	public Warrior(String warriorName0, int lifeLvl0, int attackForce0, Weapon weapon, String shield0) {
+	public Warrior(String warriorName0, int lifeLvl0, int attackForce0, Weapon weapon, Shield shield) {
 		this.setWarriorName(warriorName0); // this.warriorName = warriorName;
 		this.setLifeLvl(lifeLvl0);
 		this.setAttackForce(attackForce0);
 		this.setWeapon(weapon);
-		this.setShield(shield0);
+		this.setShield(shield);
 	}
 	
-	public Warrior(String warriorName0, int lifeLvl0, int attackForce0, String weaponName, int weaponAttackLvl, String shield0) {
+	public Warrior(String warriorName0, int lifeLvl0, int attackForce0, String weaponName, int weaponAttackLvl, String shieldName, int shieldDefenseLvl) {
 		this.setWarriorName(warriorName0); // this.warriorName = warriorName;
 		this.setLifeLvl(lifeLvl0);
 		this.setAttackForce(attackForce0);
 		this.setWeapon(new Weapon(weaponName, weaponAttackLvl));
-		this.setShield(shield0);
+		this.setShield(new Shield(shieldName, shieldDefenseLvl));
 	}
 	
 	/* Utilisation de la méthode toString() pour mettre en forme l'objet Warrior dans la console
 	 * après que l'utilisateur ait choisi les champs string et tiré au sort les champs int.
 	 */
 	public String toString() {
-		return (warriorName + "\nHis Life level is : " + lifeLvl + "\nHis attack force is : " + attackForce + "\nWeapon : " + weapon + "\nHis shield is : " + shield);
+		return ("-- " + warriorName + " --" + "\nHis Life level is : " + lifeLvl + "\nHis attack force is : " + attackForce + "\nWeapon : " + weapon + "\nShield : " + shield);
 	}
 	
 	// GETTEURS et SETTEURS ___________________________________________________________________________
@@ -48,7 +48,12 @@ public class Warrior {
 	}
 
 	private void setWarriorName(String warriorName) {
-		this.warriorName = warriorName;
+		if(warriorName.isEmpty() || warriorName == null) {
+			this.warriorName = "Conan";
+		} else {
+			this.warriorName = warriorName;
+		}
+		System.out.println("Set warrior name: "+this.warriorName);
 	}
 
 	private int getLifeLvl() {
@@ -75,21 +80,12 @@ public class Warrior {
 		this.weapon = weapon;
 	}
 
-	private String getShield() {
+	private Shield getShield() {
 		return shield;
 	}
 
-	private void setShield(String shield) {
-		// TODO class shield
-		// Gestion des entrées utilisateur invalides et comportement par défaut
+	private void setShield(Shield shield) {
 		this.shield = shield;
-		if(shield.isEmpty() || shield == null) {
-			this.shield = "Wooden shield";
-		}
-		else {
-			this.shield = shield;
-		}
-		System.out.println("Set shield name: "+this.shield);
 	}
 
 }

@@ -36,15 +36,24 @@ public class Wizzard {
 	 * après que l'utilisateur ait choisi les champs string et tiré au sort les champs int.
 	 */
 	public String toString() {
-		return (wizzardName + "\nHis Life level is : " + lifeLvl + "\nHis attack force is : " + attackForce + "\nSpell : " + spell + "\nHis filter is : " + filter);
+		return ("-- " + wizzardName + " --" + "\nHis Life level is : " + lifeLvl + "\nHis attack force is : " + attackForce + "\nSpell : " + spell + "\nHis filter is : " + filter);
 	}
+	
+	// GETTEURS et SETTEURS ___________________________________________________________________________
+	// Pour pouvoir utiliser les attributs privates de la classe.
+
 	
 	private String getWizzardName() {
 		return wizzardName;
 	}
 
 	private void setWizzardName(String wizzardName) {
-		this.wizzardName = wizzardName;
+		if(wizzardName.isEmpty() || wizzardName == null) {
+			this.wizzardName = "Morgane fairy";
+		} else {
+			this.wizzardName = wizzardName;
+		}
+		System.out.println("Set wizzard name: "+this.wizzardName);
 	}
 
 	private int getLifeLvl() {
@@ -76,8 +85,7 @@ public class Wizzard {
 	}
 
 	private void setFilter(String filter) {
-		// TODO class filter
-		// Gestion des entrées utilisateur invalides et comportement par défaut
+		
 		if(filter.isEmpty() || filter == null) {
 			this.filter = "Pure energy shield";
 		}

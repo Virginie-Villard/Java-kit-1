@@ -35,7 +35,12 @@ public class Filter {
 	}
 
 	private void setFilterName(String filterName) {
-		this.filterName = filterName;
+		if(filterName.isEmpty() || filterName == null) {
+			this.filterName = "Épée courte";
+		} else {
+			this.filterName = filterName;
+		}
+		System.out.println("Set filter name: "+this.filterName);
 	}
 
 	private int getFilterDefenseLvl() {

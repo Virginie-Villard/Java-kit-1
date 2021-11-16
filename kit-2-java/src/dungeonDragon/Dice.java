@@ -1,6 +1,6 @@
 package dungeonDragon;
 
-/**
+/*
  * @see : https://www.geeksforgeeks.org/java-program-to-emulate-n-dice-roller/
  * Utilisation de ce site pour la création d'un objet dé
  * (je remplace void par int pour que le résultat des dés soit retournés par la classe).
@@ -16,7 +16,7 @@ public class Dice {
 	 */
     public static int dice(int numberOfDice)
     {
-    	/**
+    	/*
     	 * Nouvelle instance de l'objet Random
     	 */
         Random ranNum = new Random();
@@ -25,14 +25,14 @@ public class Dice {
         int total = 0;
         int randomNumber = 0;
  
-        /**
+        /*
          *  Mise en place de la boucle for qui "Lance les dés".
          *  On utilise le nombre de dés comme nombre de tours de boucle,
          *  afin d'utiliser le total des résultats de chaque dé.
          */
         for (int i = 0; i < numberOfDice; i++) {
  
-            /** Generating the random number and storing it
+            /* Generating the random number and storing it
             * in the 'randomNumber' variable */
             randomNumber = ranNum.nextInt(6) + 1;
             total = total + randomNumber;
@@ -40,13 +40,12 @@ public class Dice {
             System.out.print(". ");
         }
         
-        /** Affichage des résultats des dés,
+        /* Affichage des résultats des dés,
          * Les résultats de la boucle séparés d'un espace,
          * puis le total.
          */
-        System.out.println("");
-        System.out.println("Total: " + total);
-        /** Return du total pour pourvoir utiliser le résultat. */
+        System.out.println(" Total: " + total +".");
+        /* Return du total pour pourvoir utiliser le résultat. */
         return total;
     }
 

@@ -42,7 +42,7 @@ public class TestGame {
 		boolean isPlaying = true;
 		
 		do {
-			System.out.print("If you want to stop game choose 0, if you want a warrior choose 1, if you want a wizzard choose 2, \nif you want to see your characters choose 3, if you want to start the game choose 4 : ");
+			System.out.print("\nIf you want to stop game choose 0, if you want a warrior choose 1, if you want a wizzard choose 2, \nif you want to see your characters choose 3, if you want to start the game choose 4 : ");
 			int userChoice = clavier.nextInt();
 			
 			/* Prend en compte le saut de ligne du clavier fait avant l'entrée. Merci Rick ! */
@@ -68,13 +68,11 @@ public class TestGame {
 				case 1:
 					System.out.println("\n \t Warrior");
 					warrior(clavier);
-					System.out.println("Here is your warrior.\n");
 					break;
 		
 				case 2:
 					System.out.println("\n \t Wizzard");
 					wizzard(clavier);
-					System.out.println("Here is your wizzard.\n");
 					break;
 					
 				case 3:
@@ -103,68 +101,75 @@ public class TestGame {
 	 */
 
 	private void warrior(Scanner clavier) {
-		System.out.print("Choose your warrior name : ");
+		System.out.println("\nChoose your warrior name : ");
 		String warriorName = clavier.nextLine();
 		
-		System.out.println("Life level, press Enter to launch 5 dices : ");
+		System.out.print("\nLife level, press Enter to launch 5 dices : ");
 		clavier.nextLine();
 		int launchDice1 = Dice.dice(5);
         int lifeLvl = launchDice1;
         
-        System.out.println("Attack force, press Enter to launch 1 dice : ");
+        System.out.print("\nAttack force, press Enter to launch 1 dice : ");
         clavier.nextLine();
 		int launchDice2 = Dice.dice(1);
         int attackForce = launchDice2;
         
-        System.out.println("Weapon name ? ");
+        System.out.println("\nWeapon name ? ");
         String weaponName = clavier.nextLine();
         
-        System.out.println("Weapon attack level, press Enter to launch 1 dice : ");
+        System.out.print("\nWeapon attack level, press Enter to launch 1 dice : ");
         clavier.nextLine();
 		int launchDice3 = Dice.dice(1);
         int weaponAttackLvl = launchDice3;
         
-        System.out.println("Shield ? ");
-        String shield = clavier.nextLine();
+        System.out.println("\nShield name ? ");
+        String shieldName = clavier.nextLine();
         
-        warrior = new Warrior(warriorName, lifeLvl, attackForce, weaponName, weaponAttackLvl, shield);
+        System.out.print("\nShield defense level, press Enter to launch 1 dice : ");
+        clavier.nextLine();
+		int launchDice4 = Dice.dice(1);
+        int shieldDefenseLvl = launchDice4;
+        
+        warrior = new Warrior(warriorName, lifeLvl, attackForce, weaponName, weaponAttackLvl, shieldName, shieldDefenseLvl);
         
         this.warriorList.add(warrior);
         
-        System.out.println(warrior);
+        System.out.println("Here is your warrior :\n");
+        System.out.println("\n" + warrior);
 	}
 	
 	/* ___WIZZARD__lancers de dé____________________________________________________________________ */
 
 	private void wizzard(Scanner clavier) {
-		System.out.print("Choose your wizzard name : ");
+		System.out.print("\nChoose your wizzard name : ");
 		String wizzardName = clavier.nextLine();
 		
-		System.out.println("Life level, press Enter to launch 5 dices : ");
+		System.out.print("\nLife level, press Enter to launch 5 dices : ");
 		clavier.nextLine();
 		int launchDice1 = Dice.dice(5);
         int lifeLvl = launchDice1;
         
-        System.out.println("Attack force, press Enter to launch 1 dice : ");
+        System.out.print("\nAttack force, press Enter to launch 1 dice : ");
         clavier.nextLine();
 		int launchDice2 = Dice.dice(1);
         int attackForce = launchDice2;
         
-        System.out.println("Spell ? ");
+        System.out.println("\nSpell name ? ");
         String spell = clavier.nextLine();
         
-        System.out.println("Spell attack level, press Enter to launch 1 dice : ");
+        System.out.print("\nSpell attack level, press Enter to launch 1 dice : ");
         clavier.nextLine();
 		int launchDice3 = Dice.dice(1);
         int spellAttackLvl = launchDice3;
         
-        System.out.println("Filter ? ");
+        System.out.println("\nFilter ? ");
         String filter = clavier.nextLine();
         
         wizzard = new Wizzard(wizzardName, lifeLvl, attackForce, spell, spellAttackLvl, filter);
         
         this.wizzardList.add(wizzard);
         
+        System.out.println("\nHere is your wizzard :\n");
         System.out.println(wizzard);
 	}
 	
@@ -175,8 +180,7 @@ public class TestGame {
 			System.out.println("You have to create a character to start the game...");
 		}
 		else {
-			System.out.println("You have created your character, now roll the dice to advance :");
-			System.out.println("Press enter to roll the dice : ");
+			System.out.println("You have created your character, Press enter to roll the dice to advance :");
 			// new playGame();
 		}
 	} 
@@ -188,7 +192,7 @@ public class TestGame {
 		// Ajout total du dé autant de fois que nécéssaire
 		// tant qu'on n'est pas >= 64.
 		
-		/** Positionne perso sur la case 1 */
+		/* Positionne perso sur la case 1 */
 		/*private int position = 1;
 		
 		while (position <= 64) {

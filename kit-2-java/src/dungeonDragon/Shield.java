@@ -34,7 +34,12 @@ public class Shield {
 	}
 
 	private void setShieldName(String shieldName) {
-		this.shieldName = shieldName;
+		if(shieldName.isEmpty() || shieldName == null) {
+			this.shieldName = "Wooden shield";
+		} else {
+			this.shieldName = shieldName;
+		}
+		System.out.println("Set shield name: "+this.shieldName);
 	}
 
 	private int getShieldDefenseLvl() {
